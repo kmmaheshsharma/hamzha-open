@@ -1,0 +1,67 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug - OpenDental API (Local Supabase)",
+            "request": "launch",
+            "mainClass": "com.clinic.opendental.OpenDentalApiApplication",
+            "projectName": "api",
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "dev",
+                "SUPABASE_DB_URL": "jdbc:postgresql://db.qpjofnaucxsskamuepkh.supabase.co:5432/postgres?sslmode=require",
+                "SUPABASE_DB_USERNAME": "postgres",
+                "SUPABASE_DB_PASSWORD": "Postgres6623"
+            },
+            "vmArgs": "-Dspring.devtools.restart.enabled=true",
+            "console": "internalConsole"
+        },
+        {
+            "type": "java",
+            "name": "Debug - OpenDental API (Supabase)",
+            "request": "launch",
+            "mainClass": "com.clinic.opendental.OpenDentalApiApplication",
+            "projectName": "api",
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "dev",
+                "SUPABASE_DB_URL": "jdbc:postgresql://db.qpjofnaucxsskamuepkh.supabase.co:5432/postgres?sslmode=require",
+                "SUPABASE_DB_USERNAME": "postgres",
+                "SUPABASE_DB_PASSWORD": "Postgres6623"
+            },
+            "console": "internalConsole"
+        },
+        {
+            "type": "java",
+            "name": "Debug - OpenDental API (Remote Supabase)",
+            "request": "launch",
+            "mainClass": "com.clinic.opendental.OpenDentalApiApplication",
+            "projectName": "api",
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "dev",
+                "SUPABASE_DB_URL": "${input:supabaseDbUrl}",
+                "SUPABASE_DB_USERNAME": "${input:supabaseDbUsername}",
+                "SUPABASE_DB_PASSWORD": "${input:supabaseDbPassword}"
+            },
+            "console": "internalConsole"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "supabaseDbUrl",
+            "type": "promptString",
+            "description": "Supabase JDBC URL",
+            "default": "jdbc:postgresql://db.qpjofnaucxsskamuepkh.supabase.co:5432/postgres?sslmode=require"
+        },
+        {
+            "id": "supabaseDbUsername",
+            "type": "promptString",
+            "description": "Supabase DB Username",
+            "default": "postgres"
+        },
+        {
+            "id": "supabaseDbPassword",
+            "type": "promptString",
+            "description": "Supabase DB Password"
+        }
+    ]
+}

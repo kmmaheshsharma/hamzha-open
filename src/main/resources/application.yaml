@@ -12,9 +12,9 @@ spring:
     default-property-inclusion: non_null
 
   datasource:
-    url: ${SUPABASE_DB_URL:jdbc:postgresql://db.qpjofnaucxsskamuepkh.supabase.co:5432/postgres?sslmode=require}
-    username: ${SUPABASE_DB_USERNAME:postgres}
-    password: ${SUPABASE_DB_PASSWORD:Postgres6623}
+    url: ${SUPABASE_DB_URL}
+    username: ${SUPABASE_DB_USERNAME}
+    password: ${SUPABASE_DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
     hikari:
       pool-name: SupabaseHikariPool
